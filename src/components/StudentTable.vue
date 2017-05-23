@@ -16,19 +16,19 @@ export default {
   },
   methods: {
     getAll() {
-      axios.get('/students')
+      axios.get('/api/students//')
       .then((response) => {
-        this.students = response.data;
+        this.students = response.results;
       });
     },
     AddStudent(student) {
-      axios.post('/students', student)
+      axios.post('/api/students/', student)
       .then((res) => {
         this.students.push(res.data);
       });
     },
     remove(index) {
-      axios.delete(`/students/${this.students[index].id}`).then(() => {
+      axios.delete(`/api/students//${this.students[index].id}`).then(() => {
         this.students.splice(index, 1);
       });
     },

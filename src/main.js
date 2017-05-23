@@ -4,6 +4,7 @@ import Vue from 'vue';
 import StudentTable from './components/StudentTable';
 
 Vue.config.productionTip = false;
+Vue.config.devtools = true;
 
 /* eslint-disable no-new */
 /* eslint no-console: 2 */

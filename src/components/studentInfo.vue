@@ -3,7 +3,7 @@ export default {
   data() {
     return {
       newStudent: {
-        firstname: '',
+        first_name: '',
         name: '',
         age: '',
       },
