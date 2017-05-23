@@ -3,7 +3,6 @@
 import Vue from 'vue';
 import StudentTable from './components/StudentTable';
 
-
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

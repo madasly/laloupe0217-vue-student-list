@@ -3,6 +3,9 @@
 > A Vue.js project
 
 ## Build Setup
+<!-- pour installer json server , aller sur github json server et install
+en suivant les instructions -->
+<!-- pour lancer json server faire json-server --watch students.json -->
 
 ``` bash
 # install dependencies

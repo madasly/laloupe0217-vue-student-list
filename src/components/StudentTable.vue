@@ -1,10 +1,13 @@
 <script>
 import axios from 'axios';
 import StudentLine from './StudentLine';
+import AddStudent from './studentInfo';
+
 
 export default {
   components: {
     StudentLine,
+    AddStudent,
   },
   data() {
     return {
@@ -13,13 +16,21 @@ export default {
   },
   methods: {
     getAll() {
-      axios.get('http://localhost:3000/students')
+      axios.get('/students')
       .then((response) => {
         this.students = response.data;
       });
     },
+    AddStudent(student) {
+      axios.post('/students', student)
+      .then((res) => {
+        this.students.push(res.data);
+      });
+    },
     remove(index) {
-      this.students.splice(index, 1);
+      axios.delete(`/students/${this.students[index].id}`).then(() => {
+        this.students.splice(index, 1);
+      });
     },
   },
   mounted() {
@@ -29,6 +40,7 @@ export default {
 </script>
 
 <template>
+
   <div>
     <student-line v-for='(student, index) in students' :student="student" v-on:remove="remove(index)"> </student-line>
   </div>
